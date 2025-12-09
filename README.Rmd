@@ -1,0 +1,56 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# notify
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of notify is to provide interactive logging within a sequence
+of functions chained by pipes (`|>`)
+
+## Installation
+
+You can install the development version of notify like so:
+
+``` r
+pak::pkg_install("jofrhwld/notify")
+```
+
+## Example
+
+This is a basic example which shows you how to solve a common problem:
+
+```{r example}
+library(notify)
+
+mtcars |>
+  notify("Using mtcars") |>
+  cov() |>
+  notify("Got full covariance matrix") |>
+  colMeans() |>
+  notify("Calculated column means")
+
+# without explicit messages
+mtcars |>
+  notify() |>
+  cov() |>
+  notify() |>
+  colMeans() |>
+  notify()
+
+
+```
+

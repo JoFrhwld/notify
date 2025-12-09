@@ -1,0 +1,27 @@
+---
+title: "notify"
+format: html
+editor: visual
+---
+
+```{}
+```
+
+```{r}
+mtcars %>%
+  notify() %>%
+  cov() |> 
+  notify()
+```
+
+```{r}
+jawn <- function(expr){
+  rlang::enquo(expr)
+}
+```
+
+```{r}
+mtcars %>%
+  cov() %>%
+  jawn()
+```

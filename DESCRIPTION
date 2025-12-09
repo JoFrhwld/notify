@@ -1,0 +1,16 @@
+Type: Package
+Package: notify
+Title: Notify
+Version: 0.1.0
+Authors@R: c(
+    person("Josef", "Fruehwald", , "JoFrhwld@gmail.com", role = c("cre", "aut"))
+  )
+Description: Provides a drop-in functor interactive logging in pipe chains.
+License: GPL (>= 3)
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.3
+Imports: 
+    cli,
+    rlang

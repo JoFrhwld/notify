@@ -1,0 +1,133 @@
+---
+title: "dev"
+format: html
+editor: visual
+---
+
+```{r}
+#| eval: false
+renv::install(
+  c(
+    "usethis",
+    "desc",
+    "roxygen2",
+    "here",
+    "testthat",
+    "readr",
+    "devtools"
+  ),
+  prompt = F
+)
+
+```
+
+## Setup
+
+```{r}
+usethis::git_vaccinate()
+```
+
+```{r}
+desc::desc_coerce_authors_at_r(normalize = T)
+```
+
+```{r}
+desc::desc_del("Author")
+```
+
+```{r}
+renv::install("whoami")
+
+desc::desc_del_author("cre")
+desc::desc_add_me(role = c("cre", "aut"))
+```
+
+```{r}
+desc::desc_del("Maintainer")
+```
+
+```{r}
+usethis::use_gpl3_license()
+```
+
+```{r}
+desc::desc_set(
+  Title = "Notify",
+  Description = "Provides a drop-in functor interactive logging in pipe chains."
+)
+```
+
+```{r}
+fs::file_delete(here::here("NAMESPACE"))
+```
+
+```{r}
+usethis::use_roxygen_md()
+```
+
+```{r}
+roxygen2::roxygenize()
+```
+
+```{r}
+usethis::use_readme_rmd()
+```
+
+```{r}
+gitignore <- readr::read_lines(here::here(".gitignore"))
+gitignore <- c(
+  gitignore,
+  "*_files",
+  "*.html"
+) |>
+  unique()
+
+readr::write_lines(
+  gitignore,
+  here::here(".gitignore")
+)
+```
+
+```{r}
+rbuildignore <- readr::read_lines(here::here(".Rbuildignore"))
+
+rbuildignore <- c(
+  rbuildignore,
+  "^README\\.Rmd$",
+  "^dev.*",
+  "hooks"
+) |>
+  unique()
+
+readr::write_lines(
+  rbuildignore,
+  here::here(".Rbuildignore")
+)
+```
+
+
+```{r}
+if (fs::file_exists("R/hello.R")) {
+  fs::file_delete("R/hello.R")
+}
+```
+
+```{r}
+if (!fs::file_exists("R/notify-package.R")) {
+  usethis::use_package_doc()
+}
+```
+
+
+```{r}
+renv::snapshot(type = "all")
+```
+```{r}
+usethis::use_github_action("check-standard")
+```
+```{r}
+usethis::use_package("rlang")
+usethis::use_package("cli")
+```
+
+
