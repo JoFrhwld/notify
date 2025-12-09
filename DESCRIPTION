@@ -14,5 +14,5 @@ RoxygenNote: 7.3.3
 Imports: 
     cli,
     rlang
-URL: https://github.com/JoFrhwld/notify
+URL: https://github.com/JoFrhwld/notify, https://jofrhwld.github.io/notify/
 BugReports: https://github.com/JoFrhwld/notify/issues
