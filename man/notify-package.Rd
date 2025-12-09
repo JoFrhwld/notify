@@ -7,6 +7,15 @@
 \description{
 Provides a drop-in functor interactive logging in pipe chains.
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/JoFrhwld/notify}
+  \item \url{https://jofrhwld.github.io/notify/}
+  \item Report bugs at \url{https://github.com/JoFrhwld/notify/issues}
+}
+
+}
 \author{
 \strong{Maintainer}: Josef Fruehwald \email{JoFrhwld@gmail.com}
 

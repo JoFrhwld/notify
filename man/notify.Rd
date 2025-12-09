@@ -17,7 +17,8 @@ The evaluated \code{expr}
 }
 \description{
 Use \code{notify()} to insert interactive logging into
-a sequence of functions chained by a base pipe (\verb{|>})
+a sequence of functions chained by a base pipe (\verb{|>}).
+Does not work with magrittr \verb{\%>\%}.
 }
 \examples{
 mtcars |>
