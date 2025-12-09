@@ -13,6 +13,7 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.3
 Imports: 
     cli,
+    glue,
     rlang
 URL: https://github.com/JoFrhwld/notify, https://jofrhwld.github.io/notify/
 BugReports: https://github.com/JoFrhwld/notify/issues
